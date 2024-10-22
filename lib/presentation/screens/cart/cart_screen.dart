@@ -35,6 +35,9 @@ class _CartScreenState extends State<CartScreen> {
             if(state is CartErrorState && state.items.isEmpty){
               return  Center(child: Text(state.message),);
             }
+            if(state is CartLoaddedState && state.items.isEmpty){
+              return Center(child: Text("Cart is empty",style: TextStyles.heading2,),);
+            }
             return Column(
               children: [
             
